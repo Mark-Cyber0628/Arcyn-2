@@ -84,3 +84,83 @@ footer{ text-align:center; padding:20px; background:#222; color:#fff; }
   header{ flex-direction:column; gap:10px; padding:10px 20px; }
   .service-cards, .team, .project-grid, .forms-container{ flex-direction:column; align-items:center; }
 }
+
+/* Mobil optimizálás itt kezdődik */
+/* Mobil specifikus stílusok */
+@media (max-width: 768px) {
+
+  /* Header: logó középre, menü egymás alá */
+  header {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 20px;
+  }
+
+  header .logo {
+    font-size: 1.8rem; /* kicsit nagyobb, hogy látszódjon a pulzus */
+    text-align: center;
+  }
+
+  header nav ul {
+    flex-direction: column;
+    gap: 8px;
+    align-items: center;
+  }
+
+  header nav a, .cta-btn {
+    padding: 10px 15px;
+    width: 100%;
+    text-align: center;
+  }
+
+  /* Hero: szöveg kisebb méret, padding csökkentése */
+  #hero h1 {
+    font-size: 2rem;
+  }
+
+  #hero p {
+    font-size: 1rem;
+    padding: 0 15px;
+  }
+
+  #hero .cta-btn {
+    padding: 10px 20px;
+    font-size: 1rem;
+  }
+
+  /* Szolgáltatások és projektek: kártyák teljes szélesség */
+  .service-cards, .project-grid, .team, .forms-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .service-cards .card, .project-grid .card, .team .member {
+    width: 90%;  /* majdnem teljes szélesség */
+    margin-bottom: 20px;
+  }
+
+  /* Kapcsolat és regisztráció/login formok */
+  #contact-form input, #contact-form textarea,
+  #register-form input, #login-form input {
+    width: 90%;
+    margin: 10px auto;
+  }
+
+  #contact-form button, #register-form button, #login-form button {
+    width: 90%;
+    margin-top: 15px;
+  }
+
+  /* Modal tartalom kisebb képernyőre */
+  .modal-content {
+    width: 95%;
+    padding: 20px;
+  }
+
+  /* Footer */
+  footer {
+    font-size: 0.9rem;
+    padding: 15px 10px;
+  }
+}
