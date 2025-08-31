@@ -164,3 +164,35 @@ footer{ text-align:center; padding:20px; background:#222; color:#fff; }
     padding: 15px 10px;
   }
 }
+
+header {
+  max-height: 80px; /* ne legyen túl magas mobilon */
+  overflow: hidden; /* ne lógjon ki a tartalom */
+}
+#hero {
+  min-height: 70vh; /* mobilon ne legyen túl nagy */
+  padding: 50px 20px; /* belső margó kisebb mobilon */
+}
+#hero h1 { font-size: 2rem; line-height: 1.2; }
+#hero p { font-size: 1rem; line-height: 1.4; }
+#hero .cta-btn { font-size: 1rem; padding: 10px 15px; }
+
+.service-cards .card,
+.project-grid .card,
+.team .member {
+  width: 90%;
+  max-width: 350px;
+  margin-bottom: 20px;
+}
+.service-cards,
+.project-grid,
+.team,
+.forms-container {
+  gap: 15px;
+}
+:target::before {
+  content: "";
+  display: block;
+  height: 80px; /* header magasság */
+  margin-top: -80px;
+}
