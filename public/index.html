@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Arcyn - Professzionális Webalkalmazások</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="logo">Arcyn</div>
+    <nav>
+      <ul>
+        <li><a href="#hero">Home</a></li>
+        <li><a href="#services">Szolgáltatások</a></li>
+        <li><a href="#projects">Projektek</a></li>
+        <li><a href="#about">Rólunk</a></li>
+        <li><a href="#contact">Kapcsolat</a></li>
+        <li><a href="#register-login">Fiók</a></li>
+      </ul>
+    </nav>
+    <a href="#contact" class="cta-btn">Árajánlat kérés</a>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="hero">
+    <div class="hero-content">
+      <h1>Professzionális Webalkalmazások Fejlesztése</h1>
+      <p>Kreatív és modern megoldások minden projekthez</p>
+      <a href="#projects" class="cta-btn">Tekintsd meg munkáinkat</a>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section id="services">
+    <h2>Szolgáltatásaink</h2>
+    <div class="service-cards">
+      <div class="card">
+        <h3>Frontend Fejlesztés</h3>
+        <p>React, Vue, Angular</p>
+      </div>
+      <div class="card">
+        <h3>Backend Fejlesztés</h3>
+        <p>Node.js, Python, PHP</p>
+      </div>
+      <div class="card">
+        <h3>UX/UI Tervezés</h3>
+        <p>Felhasználóbarát és modern design</p>
+      </div>
+      <div class="card">
+        <h3>Karbantartás</h3>
+        <p>Folyamatos támogatás és frissítések</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects -->
+  <section id="projects">
+    <h2>Projektjeink</h2>
+    <div id="projects-container" class="project-grid">
+      <!-- JS tölti be a kártyákat -->
+    </div>
+  </section>
+
+  <!-- Modal -->
+  <div id="project-modal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h3 id="modal-title"></h3>
+      <p id="modal-description"></p>
+      <a id="modal-link" href="#" target="_blank">Megtekintés</a>
+    </div>
+  </div>
+
+  <!-- About -->
+  <section id="about">
+    <h2>Rólunk</h2>
+    <p>Csapatunk profi fejlesztőkből áll, akik modern webalkalmazásokat készítenek.</p>
+    <div class="team">
+      <div class="member">Márk Szakál</div>
+      <div class="member">Márk Kis</div>
+      <div class="member">Márk Nagy</div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact">
+    <h2>Kapcsolat</h2>
+    <form id="contact-form">
+      <input type="text" name="name" placeholder="Név" required>
+      <input type="email" name="email" placeholder="Email" required>
+      <textarea name="message" placeholder="Üzenet" required></textarea>
+      <button type="submit">Küldés</button>
+    </form>
+  </section>
+
+  <!-- Register/Login -->
+  <section id="register-login">
+    <h2>Felhasználói Fiók</h2>
+    <div class="forms-container">
+      <!-- Regisztráció -->
+      <form id="register-form">
+        <h3>Regisztráció</h3>
+        <input type="text" name="name" placeholder="Név" required>
+        <input type="email" name="email" placeholder="Email" required>
+        <input type="password" name="password" placeholder="Jelszó" required>
+        <button type="submit">Regisztráció</button>
+        <div id="register-msg"></div>
+      </form>
+
+      <!-- Bejelentkezés -->
+      <form id="login-form">
+        <h3>Bejelentkezés</h3>
+        <input type="email" name="email" placeholder="Email" required>
+        <input type="password" name="password" placeholder="Jelszó" required>
+        <button type="submit">Bejelentkezés</button>
+        <div id="login-msg"></div>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 WebPro. Minden jog fenntartva.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,86 @@
+/* Reset */
+* { margin:0; padding:0; box-sizing:border-box; font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+
+/* Header */
+header {
+  position: fixed; width: 100%; top:0; left:0;
+  display:flex; justify-content:space-between; align-items:center;
+  padding:15px 50px; background: rgba(255,255,255,0.2); backdrop-filter: blur(10px); z-index:1000;
+}
+header .logo{ font-weight:bold; font-size:1.5rem; color:#fff;
+/* Új animáció hozzáadása */
+  animation:smoothPulse 2s infinite ease-in-out;
+}
+/* Pulzáló kék fény */
+@keyframes smoothPulse {
+  0% {
+    text-shadow: 
+      0 0 5px #00ffff,
+      0 0 10px #00ffff,
+      0 0 20px #0099ff,
+      0 0 40px #0066cc;
+  }
+  50% {
+    text-shadow: 
+      0 0 20px #00ffff,
+      0 0 40px #00ffff,
+      0 0 60px #0099ff,
+      0 0 80px #0066cc;
+  }
+  100% {
+    text-shadow: 
+      0 0 5px #00ffff,
+      0 0 10px #00ffff,
+      0 0 20px #0099ff,
+      0 0 40px #0066cc;
+  } }
+header nav ul{ list-style:none; display:flex; gap:20px; }
+header nav a, .cta-btn{ text-decoration:none; color:#fff; padding:8px 15px; border-radius:8px; transition:0.3s; }
+header nav a:hover, .cta-btn:hover{ background: rgba(255,255,255,0.3); }
+
+/* Hero */
+#hero { height:100vh; background: url('https://source.unsplash.com/1600x900/?technology,code') center/cover no-repeat; display:flex; align-items:center; justify-content:center; color:#fff; text-align:center; position:relative; }
+#hero::after{ content:''; position:absolute; top:0; left:0; width:100%; height:100%; background: rgba(0,0,0,0.5); }
+#hero .hero-content{ position:relative; z-index:1; }
+#hero h1{ font-size:3rem; margin-bottom:20px; animation: fadeIn 1s ease forwards;}
+#hero p{ font-size:1.2rem; margin-bottom:20px; animation: fadeIn 1.5s ease forwards;}
+#hero .cta-btn{ background:#ff4c4c; color:#fff; animation: fadeIn 2s ease forwards;}
+@keyframes fadeIn{ from{opacity:0; transform:translateY(20px);} to{opacity:1; transform:translateY(0);} }
+
+/* Services */
+#services{ padding:100px 50px; text-align:center; background:#f5f5f5; }
+.service-cards{ display:flex; flex-wrap:wrap; gap:30px; justify-content:center; }
+.service-cards .card{ background: rgba(255,255,255,0.8); padding:20px; border-radius:15px; width:250px; transition: transform 0.3s, box-shadow 0.3s; }
+.service-cards .card:hover{ transform:translateY(-10px); box-shadow:0 10px 20px rgba(0,0,0,0.2); }
+
+/* Projects */
+.project-grid{ display:flex; flex-wrap:wrap; gap:20px; padding:50px; justify-content:center; }
+.project-grid .card{ background: rgba(255,255,255,0.8); padding:20px; border-radius:15px; width:250px; text-align:center; cursor:pointer; transition: transform 0.3s, box-shadow 0.3s; }
+.project-grid .card:hover{ transform:translateY(-10px); box-shadow:0 10px 20px rgba(0,0,0,0.2); }
+
+/* Modal */
+.modal{ display:none; position:fixed; z-index:2000; left:0; top:0; width:100%; height:100%; background:rgba(0,0,0,0.7); justify-content:center; align-items:center; }
+.modal-content{ background:#fff; padding:30px; border-radius:15px; max-width:500px; width:90%; position:relative; text-align:center; }
+.modal-content .close{ position:absolute; top:10px; right:15px; font-size:25px; cursor:pointer; }
+
+/* About */
+#about{ padding:100px 50px; text-align:center; }
+.team{ display:flex; justify-content:center; gap:30px; flex-wrap:wrap; margin-top:20px; }
+.member{ background: rgba(255,255,255,0.8); padding:15px 20px; border-radius:15px; min-width:120px; }
+
+/* Contact & Register/Login */
+#contact, #register-login{ padding:100px 50px; text-align:center; background:#f5f5f5; }
+#contact-form input, #contact-form textarea, #register-form input, #login-form input{ display:block; width:300px; margin:10px auto; padding:10px; border-radius:8px; border:1px solid #ccc; }
+#contact-form button, #register-form button, #login-form button{ padding:10px 20px; border:none; border-radius:8px; background:#ff4c4c; color:#fff; cursor:pointer; margin-top:10px; }
+#register-msg, #login-msg{ margin-top:10px; color:green; }
+
+.forms-container{ display:flex; justify-content:center; gap:50px; flex-wrap:wrap; }
+
+/* Footer */
+footer{ text-align:center; padding:20px; background:#222; color:#fff; }
+
+/* Responsive */
+@media(max-width:768px){
+  header{ flex-direction:column; gap:10px; padding:10px 20px; }
+  .service-cards, .team, .project-grid, .forms-container{ flex-direction:column; align-items:center; }
+}
