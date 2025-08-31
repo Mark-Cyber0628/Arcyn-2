@@ -88,164 +88,113 @@ footer{ text-align:center; padding:20px; background:#222; color:#fff; }
 /* Mobil optimizálás itt kezdődik */
 
 
-/* Reset */
-* { margin:0; padding:0; box-sizing:border-box; font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+/* Mobil specifikus stílusok */
+@media (max-width: 768px) {
 
-/* Header */
-header {
-  position: fixed;
-  width: 100%;
-  top: 0;
-  left: 0;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 15px 50px;
-  background: rgba(255,255,255,0.2);
-  backdrop-filter: blur(10px);
-  z-index: 1000;
-  max-height: 80px;
-  overflow: hidden;
-}
-header .logo {
-  font-weight: bold;
-  font-size: 1.5rem;
-  color: #fff;
-  animation: smoothPulse 2s infinite ease-in-out;
-}
-@keyframes smoothPulse {
-  0% { text-shadow: 0 0 5px #00ffff, 0 0 10px #00ffff, 0 0 20px #0099ff, 0 0 40px #0066cc; }
-  50% { text-shadow: 0 0 20px #00ffff, 0 0 40px #00ffff, 0 0 60px #0099ff, 0 0 80px #0066cc; }
-  100% { text-shadow: 0 0 5px #00ffff, 0 0 10px #00ffff, 0 0 20px #0099ff, 0 0 40px #0066cc; }
-}
-header nav ul { list-style:none; display:flex; gap:20px; }
-header nav a, .cta-btn {
-  text-decoration:none;
-  color:#fff;
-  padding:8px 15px;
-  border-radius:8px;
-  transition:0.3s;
-}
-header nav a:hover, .cta-btn:hover { background: rgba(255,255,255,0.3); }
+  /* Header: logó középre, menü egymás alá, minden látszik */
+  header {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 20px;
+    height: auto; /* fix magasság helyett auto */
+    flex-wrap: wrap; /* ha sok link van, lejjebb törik */
+  }
 
-/* Hero */
-#hero {
-  min-height: 70vh;
-  background: url('https://source.unsplash.com/1600x900/?technology,code') center/cover no-repeat;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  color:#fff;
-  text-align:center;
-  position:relative;
-  padding: 50px 20px;
-}
-#hero::after {
-  content:'';
-  position:absolute;
-  top:0;
-  left:0;
-  width:100%;
-  height:100%;
-  background: rgba(0,0,0,0.5);
-}
-#hero .hero-content { position:relative; z-index:1; }
-#hero h1 { font-size:3rem; margin-bottom:20px; animation: fadeIn 1s ease forwards; line-height:1.2; }
-#hero p { font-size:1.2rem; margin-bottom:20px; animation: fadeIn 1.5s ease forwards; line-height:1.4; padding: 0 15px; }
-#hero .cta-btn { background:#ff4c4c; color:#fff; animation: fadeIn 2s ease forwards; padding: 10px 20px; font-size:1rem; }
-@keyframes fadeIn{ from{opacity:0; transform:translateY(20px);} to{opacity:1; transform:translateY(0);} }
+  header .logo {
+    font-size: 1.8rem; /* pulzáló logó látszódjon */
+    text-align: center;
+  }
 
-/* Services */
-#services{ padding:100px 50px; text-align:center; background:#f5f5f5; }
-.service-cards{ display:flex; flex-wrap:wrap; gap:30px; justify-content:center; }
-.service-cards .card{
-  background: rgba(255,255,255,0.8);
-  padding:20px;
-  border-radius:15px;
-  width:250px;
-  max-width: 350px;
-  transition: transform 0.3s, box-shadow 0.3s;
-}
-.service-cards .card:hover{ transform:translateY(-10px); box-shadow:0 10px 20px rgba(0,0,0,0.2); }
+  header nav {
+    width: 100%;
+  }
 
-/* Projects */
-.project-grid{ display:flex; flex-wrap:wrap; gap:20px; padding:50px; justify-content:center; }
-.project-grid .card{
-  background: rgba(255,255,255,0.8);
-  padding:20px;
-  border-radius:15px;
-  width:250px;
-  max-width:350px;
-  text-align:center;
-  cursor:pointer;
-  transition: transform 0.3s, box-shadow 0.3s;
-}
-.project-grid .card:hover{ transform:translateY(-10px); box-shadow:0 10px 20px rgba(0,0,0,0.2); }
+  header nav ul {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
 
-/* Modal */
-.modal{ display:none; position:fixed; z-index:2000; left:0; top:0; width:100%; height:100%; background:rgba(0,0,0,0.7); justify-content:center; align-items:center; }
-.modal-content{ background:#fff; padding:30px; border-radius:15px; max-width:500px; width:95%; position:relative; text-align:center; }
-.modal-content .close{ position:absolute; top:10px; right:15px; font-size:25px; cursor:pointer; }
+  header nav li {
+    width: 100%;
+    text-align: center;
+  }
 
-/* About */
-#about{ padding:100px 50px; text-align:center; }
-.team{ display:flex; justify-content:center; gap:30px; flex-wrap:wrap; margin-top:20px; }
-.member{ background: rgba(255,255,255,0.8); padding:15px 20px; border-radius:15px; min-width:120px; max-width:350px; }
-
-/* Contact & Register/Login */
-#contact, #register-login{ padding:100px 50px; text-align:center; background:#f5f5f5; }
-#contact-form input, #contact-form textarea, #register-form input, #login-form input{
-  display:block;
-  width:300px;
-  max-width:400px;
-  margin:10px auto;
-  padding:10px;
-  border-radius:8px;
-  border:1px solid #ccc;
-}
-#contact-form button, #register-form button, #login-form button{
-  padding:10px 20px;
-  border:none;
-  border-radius:8px;
-  background:#ff4c4c;
-  color:#fff;
-  cursor:pointer;
-  margin-top:10px;
-  width:90%;
-  max-width:400px;
-}
-#register-msg, #login-msg{ margin-top:10px; color:green; }
-
-.forms-container{ display:flex; justify-content:center; gap:50px; flex-wrap:wrap; }
-
-/* Footer */
-footer{ text-align:center; padding:20px; background:#222; color:#fff; font-size:0.9rem; }
-
-/* Responsive */
-@media(max-width:768px){
-  /* Header */
-  header{ flex-direction:column; gap:10px; padding:10px 20px; }
-  header .logo{ font-size:1.8rem; text-align:center; }
-  header nav ul{ flex-direction:column; gap:8px; align-items:center; }
-  header nav a, .cta-btn{ padding:10px 15px; width:100%; text-align:center; }
+  header nav a, .cta-btn {
+    display: block;
+    padding: 10px 0;
+    width: 100%;
+    text-align: center;
+  }
 
   /* Hero */
-  #hero{ min-height:70vh; padding:50px 20px; }
-  #hero h1{ font-size:2rem; }
-  #hero p{ font-size:1rem; padding:0 15px; }
-  #hero .cta-btn{ padding:10px 20px; font-size:1rem; }
+  #hero {
+    min-height: 70vh;
+    padding: 50px 20px;
+  }
+  #hero h1 {
+    font-size: 2rem;
+  }
+  #hero p {
+    font-size: 1rem;
+    padding: 0 15px;
+  }
+  #hero .cta-btn {
+    padding: 10px 20px;
+    font-size: 1rem;
+  }
 
-  /* Cards */
-  .service-cards, .project-grid, .team, .forms-container{ flex-direction:column; align-items:center; gap:15px; }
-  .service-cards .card, .project-grid .card, .team .member{ width:90%; max-width:350px; margin-bottom:20px; }
+  /* Cards: services, projects, team, forms */
+  .service-cards,
+  .project-grid,
+  .team,
+  .forms-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+  }
 
-  /* Forms */
-  #contact-form input, #contact-form textarea, #register-form input, #login-form input{ width:90%; max-width:400px; margin:10px auto; }
-  #contact-form button, #register-form button, #login-form button{ width:90%; max-width:400px; margin-top:15px; }
+  .service-cards .card,
+  .project-grid .card,
+  .team .member {
+    width: 90%;
+    max-width: 350px;
+    margin-bottom: 20px;
+  }
+
+  /* Forms: contact, register/login */
+  #contact-form input,
+  #contact-form textarea,
+  #register-form input,
+  #login-form input {
+    width: 90%;
+    max-width: 400px;
+    margin: 10px auto;
+  }
+
+  #contact-form button,
+  #register-form button,
+  #login-form button {
+    width: 90%;
+    max-width: 400px;
+    margin-top: 15px;
+  }
 
   /* Modal */
-  .modal-content{ width:95%; padding:20px; }
+  .modal-content {
+    width: 95%;
+    padding: 20px;
+  }
 
   /* Footer */
-  footer{ padding:15px 10px; }
+  footer {
+    font-size: 0.9rem;
+    padding: 15px 10px;
+  }
 }
